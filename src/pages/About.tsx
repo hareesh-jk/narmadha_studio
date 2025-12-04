@@ -49,7 +49,7 @@ export default function About() {
               <span className="text-primary"> Beautiful Moments</span>
             </h1>
             <p className="text-muted-foreground text-xl leading-relaxed">
-              At Lumière Photography, we believe every moment tells a story. 
+              At Narmadha Studio Photography, we believe every moment tells a story. 
               Our passion is to capture those fleeting instances and transform them 
               into timeless memories.
             </p>
@@ -92,7 +92,7 @@ export default function About() {
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Founded in 2016, Lumière Photography began with a simple dream — 
+                  Founded in 2016, Narmadha Studio Photography began with a simple dream — 
                   to capture the essence of human connections through the lens of a camera.
                 </p>
                 <p>

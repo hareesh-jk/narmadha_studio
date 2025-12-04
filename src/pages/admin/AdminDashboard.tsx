@@ -130,8 +130,19 @@ export default function AdminDashboard() {
           {/* Logo */}
           <div className="flex items-center justify-between p-6 border-b border-border">
             <Link to="/" className="flex items-center gap-2">
-              <Camera className="h-7 w-7 text-primary" />
-              <span className="font-serif text-xl font-semibold">Lumière</span>
+              <img
+                src="/logo.png"
+                alt="Narmadha Studio"
+                className="h-8 w-auto object-contain"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  const icon = target.nextElementSibling as HTMLElement;
+                  if (icon) icon.style.display = 'block';
+                }}
+              />
+              <Camera className="h-7 w-7 text-primary hidden" />
+              <span className="font-serif text-xl font-semibold">Narmadha Studio</span>
             </Link>
             <button
               onClick={() => setSidebarOpen(false)}
@@ -199,7 +210,7 @@ export default function AdminDashboard() {
                 </div>
                 <div className="hidden sm:block">
                   <p className="text-sm font-medium">Admin</p>
-                  <p className="text-xs text-muted-foreground">admin@lumiere.studio</p>
+                  <p className="text-xs text-muted-foreground">admin@narmadhastudio.com</p>
                 </div>
               </div>
             </div>

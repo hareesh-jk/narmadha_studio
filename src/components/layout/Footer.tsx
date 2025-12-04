@@ -29,8 +29,19 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-6">
-              <Camera className="h-8 w-8 text-primary" />
-              <span className="font-serif text-2xl font-semibold">Lumière</span>
+              <img
+                src="/logo.png"
+                alt="Narmadha Studio"
+                className="h-10 w-auto object-contain"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  const icon = target.nextElementSibling as HTMLElement;
+                  if (icon) icon.style.display = 'block';
+                }}
+              />
+              <Camera className="h-8 w-8 text-primary hidden" />
+              <span className="font-serif text-2xl font-semibold">Narmadha Studio</span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
               Capturing your precious moments with artistry and passion. 
@@ -124,7 +135,7 @@ export function Footer() {
                   href="mailto:hello@lumiere.studio"
                   className="text-muted-foreground hover:text-primary transition-colors text-sm"
                 >
-                  hello@lumiere.studio
+                  hello@narmadhastudio.com
                 </a>
               </li>
             </ul>
@@ -133,7 +144,7 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Lumière Photography. All rights reserved.
+            © {new Date().getFullYear()} Narmadha Studio Photography. All rights reserved.
           </p>
           <div className="flex gap-6">
             {footerLinks.legal.map((link) => (

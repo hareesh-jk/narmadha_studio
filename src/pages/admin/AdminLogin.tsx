@@ -6,10 +6,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { useAuth } from "@/contexts/AuthContext";
 
 export default function AdminLogin() {
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { signIn } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [credentials, setCredentials] = useState({
@@ -21,25 +23,22 @@ export default function AdminLogin() {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulated login - in production, this would call an API
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    // Demo credentials check
-    if (credentials.email === "admin@lumiere.studio" && credentials.password === "admin123") {
+    try {
+      await signIn(credentials.email, credentials.password);
       toast({
         title: "Welcome back!",
         description: "Successfully logged in to admin panel.",
       });
       navigate("/admin/dashboard");
-    } else {
+    } catch (error: any) {
       toast({
         title: "Invalid credentials",
-        description: "Please check your email and password.",
+        description: error.message || "Please check your email and password.",
         variant: "destructive",
       });
+    } finally {
+      setIsLoading(false);
     }
-
-    setIsLoading(false);
   };
 
   return (
@@ -74,7 +73,7 @@ export default function AdminLogin() {
                   onChange={(e) =>
                     setCredentials({ ...credentials, email: e.target.value })
                   }
-                  placeholder="admin@lumiere.studio"
+                  placeholder="admin@narmadhastudio.com"
                   className="pl-10"
                   required
                 />
@@ -127,7 +126,7 @@ export default function AdminLogin() {
               Demo Credentials:
             </p>
             <p className="text-xs text-center font-mono">
-              admin@lumiere.studio / admin123
+              admin@narmadhastudio.com / admin123
             </p>
           </div>
 

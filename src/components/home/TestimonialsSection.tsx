@@ -8,7 +8,7 @@ const testimonials = [
     role: "Wedding Client",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
     rating: 5,
-    text: "Lumière captured our wedding day beautifully. Every photo tells a story of love and joy. The team was professional, creative, and made us feel so comfortable. Highly recommend!",
+    text: "Narmadha Studio captured our wedding day beautifully. Every photo tells a story of love and joy. The team was professional, creative, and made us feel so comfortable. Highly recommend!",
   },
   {
     id: 2,

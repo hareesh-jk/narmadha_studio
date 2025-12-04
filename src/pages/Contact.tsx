@@ -22,7 +22,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email Us",
-    details: ["hello@lumiere.studio", "bookings@lumiere.studio"],
+    details: ["hello@narmadhastudio.com", "bookings@narmadhastudio.com"],
   },
   {
     icon: Clock,

@@ -6,12 +6,35 @@ import { Button } from "@/components/ui/button";
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      {/* Background Video/Image */}
       <div className="absolute inset-0">
+        {/* Video background if available */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover hidden"
+          onError={(e) => {
+            // Hide video if not available, show image instead
+            const target = e.target as HTMLVideoElement;
+            target.style.display = 'none';
+            const img = target.nextElementSibling as HTMLImageElement;
+            if (img) img.style.display = 'block';
+          }}
+        >
+          <source src="/video.mp4" type="video/mp4" />
+        </video>
+        {/* Fallback image */}
         <img
-          src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=1920&q=80"
-          alt="Wedding photography"
+          src="/hero-bg.jpg"
+          alt="Narmadha Studio Photography"
           className="w-full h-full object-cover"
+          onError={(e) => {
+            // Use placeholder if custom image not found
+            const target = e.target as HTMLImageElement;
+            target.src = "https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=1920&q=80";
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/50 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent" />

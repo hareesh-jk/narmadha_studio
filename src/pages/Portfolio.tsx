@@ -1,19 +1,9 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { Layout } from "@/components/layout/Layout";
 import { PortfolioCard } from "@/components/portfolio/PortfolioCard";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-
-const categories = [
-  "All",
-  "Wedding",
-  "Kids",
-  "Events",
-  "Outdoor",
-  "Studio",
-  "Editing",
-];
 
 const portfolioItems = [
   {
@@ -121,76 +111,22 @@ const portfolioItems = [
 ];
 
 export default function Portfolio() {
-  const [activeCategory, setActiveCategory] = useState("All");
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
-  const filteredItems = activeCategory === "All"
-    ? portfolioItems
-    : portfolioItems.filter(item => item.category === activeCategory);
-
-  const lightboxSlides = filteredItems.map(item => ({
+  const lightboxSlides = portfolioItems.map(item => ({
     src: item.image,
     title: item.title,
   }));
 
   return (
     <Layout>
-      {/* Hero */}
-      <section className="relative pt-32 pb-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <span className="text-primary font-medium text-sm tracking-wider uppercase">
-              Our Portfolio
-            </span>
-            <h1 className="font-serif text-5xl sm:text-6xl font-semibold mt-3 mb-6">
-              Captured
-              <span className="text-primary"> Moments</span>
-            </h1>
-            <p className="text-muted-foreground text-xl leading-relaxed">
-              Browse through our collection of cherished memories and artistic creations.
-              Each photograph tells a unique story.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Category Filter */}
-      <section className="pb-8">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="flex flex-wrap justify-center gap-2"
-          >
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
-                  activeCategory === category
-                    ? "bg-primary text-primary-foreground shadow-soft"
-                    : "bg-card text-muted-foreground hover:bg-muted border border-border"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Portfolio Grid */}
-      <section className="pb-24">
+      {/* Portfolio Grid - Direct Display */}
+      <section className="pt-24 pb-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <AnimatePresence mode="popLayout">
-              {filteredItems.map((item, index) => (
+              {portfolioItems.map((item, index) => (
                 <PortfolioCard
                   key={item.id}
                   {...item}
@@ -202,18 +138,6 @@ export default function Portfolio() {
               ))}
             </AnimatePresence>
           </div>
-
-          {filteredItems.length === 0 && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center py-20"
-            >
-              <p className="text-muted-foreground text-lg">
-                No items found in this category.
-              </p>
-            </motion.div>
-          )}
         </div>
       </section>
 

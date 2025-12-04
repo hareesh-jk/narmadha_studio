@@ -51,11 +51,24 @@ export function Navbar() {
               className="flex items-center gap-2 group"
             >
               <div className="relative">
-                <Camera className="h-8 w-8 text-primary transition-transform duration-300 group-hover:scale-110" />
+                {/* Use logo image if available, otherwise fallback to icon */}
+                <img
+                  src="/logo.png"
+                  alt="Narmadha Studio"
+                  className="h-10 w-auto object-contain"
+                  onError={(e) => {
+                    // Fallback to icon if logo not found
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const icon = target.nextElementSibling as HTMLElement;
+                    if (icon) icon.style.display = 'block';
+                  }}
+                />
+                <Camera className="h-8 w-8 text-primary transition-transform duration-300 group-hover:scale-110 hidden" />
                 <div className="absolute -inset-2 bg-primary/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               <span className="font-serif text-2xl font-semibold tracking-tight text-foreground">
-                Lumière
+                Narmadha Studio
               </span>
             </Link>
 
