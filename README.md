@@ -1,73 +1,81 @@
-# Welcome to your Lovable project
+# Narmadha Studio Photography
 
-## Project info
+Professional photography studio website with booking system, portfolio management, and admin dashboard.
 
-**URL**: https://lovable.dev/projects/d3cf9aad-ec10-45e7-acf0-c448faaf6747
+## 🚀 Quick Start
 
-## How can I edit this code?
+### Run the Application (3 Simple Steps)
 
-There are several ways of editing your application.
+```bash
+# 1. Install dependencies
+npm install
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/d3cf9aad-ec10-45e7-acf0-c448faaf6747) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 2. Start development server
 npm run dev
+
+# 3. Open browser to http://localhost:8080
 ```
 
-**Edit a file directly in GitHub**
+**That's it!** The app will run without any backend setup. 🎉
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+> **Note**: Backend features (admin login, bookings, payments) require additional setup. See `SETUP.md` for details.
 
-**Use GitHub Codespaces**
+## 📚 Documentation
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- **`START_HERE.md`** - Quick start guide
+- **`HOW_TO_RUN.md`** - Detailed running instructions & troubleshooting
+- **`SETUP.md`** - Complete backend setup guide
+- **`AUTHENTICATION_DEEP_DIVE.md`** - Authentication system explained
 
-## What technologies are used for this project?
+## 🎯 What Works Out of the Box
 
-This project is built with:
+- ✅ Homepage with all sections
+- ✅ Portfolio page (displays all photos)
+- ✅ Services, About, Contact, Pricing pages
+- ✅ Navigation and routing
+- ✅ Responsive design
+
+## ⚙️ Prerequisites (For Full Functionality)
+
+- Node.js 18+ and npm installed
+- Supabase account (free tier) - for database & auth
+- Cloudflare account (for R2 storage)
+- Stripe account (for payments)
+
+## Features
+
+- **Booking System**: Multi-step booking form with date/time selection
+- **Portfolio Management**: Dynamic portfolio galleries
+- **Admin Dashboard**: Complete admin panel for managing bookings, customers, and portfolio
+- **Payment Integration**: Stripe payment processing
+- **Photo Storage**: Cloudflare R2 (S3-compatible) storage
+- **Notifications**: Email and WhatsApp notifications via edge functions
+
+## Technologies
 
 - Vite
 - TypeScript
 - React
 - shadcn-ui
 - Tailwind CSS
+- Supabase (Database & Auth)
+- Stripe (Payments)
+- Cloudflare R2 (Storage)
 
-## How can I deploy this project?
+## Environment Variables
 
-Simply open [Lovable](https://lovable.dev/projects/d3cf9aad-ec10-45e7-acf0-c448faaf6747) and click on Share -> Publish.
+See `.env.example` for required environment variables.
 
-## Can I connect a custom domain to my Lovable project?
+## Deployment
 
-Yes, you can!
+Build for production:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+```sh
+npm run build
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Preview production build:
+
+```sh
+npm run preview
+```
