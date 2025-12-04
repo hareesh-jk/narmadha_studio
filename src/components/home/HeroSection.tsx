@@ -49,7 +49,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <span className="inline-block px-4 py-2 mb-6 text-sm font-medium text-primary-foreground/90 bg-primary/30 backdrop-blur-sm rounded-full border border-primary-foreground/20">
-              Professional Photography Services
+              Narmadha Studio · Capturing Moments, Creating Memories
             </span>
           </motion.div>
 
@@ -59,18 +59,19 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="font-serif text-5xl sm:text-6xl lg:text-7xl font-semibold text-primary-foreground leading-tight mb-6"
           >
-            Capturing Your
-            <span className="block text-gold-light">Precious Moments</span>
+            Narmadha Studio
+            <span className="block text-gold-light">Capturing Moments, Creating Memories.</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg sm:text-xl text-primary-foreground/80 max-w-xl mb-10 leading-relaxed"
+            className="text-lg sm:text-xl text-primary-foreground/80 max-w-2xl mb-10 leading-relaxed"
           >
-            From intimate portraits to grand celebrations, we transform fleeting moments 
-            into timeless memories with artistry and passion.
+            At Narmadha Studio, photography is more than a service — it is an emotion. From candid smiles
+            to grand celebrations, we bring your moments to life with artistic frames, rich colors, and
+            heartfelt storytelling.
           </motion.p>
 
           <motion.div
@@ -101,9 +102,9 @@ export function HeroSection() {
             className="flex flex-wrap gap-8 sm:gap-12 mt-16 pt-8 border-t border-primary-foreground/20"
           >
             {[
-              { value: "500+", label: "Happy Clients" },
-              { value: "8+", label: "Years Experience" },
-              { value: "50+", label: "Awards Won" },
+              { value: "300+", label: "Weddings Loved" },
+              { value: "1200+", label: "Stories Told" },
+              { value: "4.9★", label: "Client Rating" },
             ].map((stat, index) => (
               <div key={index}>
                 <div className="font-serif text-3xl sm:text-4xl font-semibold text-gold-light">

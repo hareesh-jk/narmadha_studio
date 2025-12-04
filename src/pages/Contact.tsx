@@ -12,22 +12,31 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Visit Our Studio",
-    details: ["123 Photography Lane", "Bandra West, Mumbai", "Maharashtra 400050"],
+    details: [
+      { label: "Narmadha Studio, Tamil Nadu" },
+      {
+        label: "Get directions on Google Maps",
+        href: "https://maps.app.goo.gl/g63Lt4pEsBL5wEbV6?g_st=ipc",
+      },
+    ],
   },
   {
     icon: Phone,
     title: "Call Us",
-    details: ["+91 98765 43210", "+91 22 2640 0000"],
+    details: [{ label: "+91 94434 29456", href: "tel:+919443429456" }],
   },
   {
     icon: Mail,
     title: "Email Us",
-    details: ["hello@narmadhastudio.com", "bookings@narmadhastudio.com"],
+    details: [{ label: "narmadhastudio@gmail.com", href: "mailto:narmadhastudio@gmail.com" }],
   },
   {
     icon: Clock,
     title: "Working Hours",
-    details: ["Mon - Sat: 9:00 AM - 7:00 PM", "Sunday: Closed"],
+    details: [
+      { label: "Mon - Sat: 9:00 AM - 7:00 PM" },
+      { label: "Sunday: By appointment" },
+    ],
   },
 ];
 
@@ -82,7 +91,8 @@ export default function Contact() {
               <span className="text-primary"> Conversation</span>
             </h1>
             <p className="text-muted-foreground text-xl leading-relaxed">
-              Have questions or ready to book your session? We'd love to hear from you.
+              Have a celebration, baby shoot, or outdoor portrait in mind? Reach out and we will
+              craft a custom plan that fits your story.
             </p>
           </motion.div>
         </div>
@@ -133,7 +143,7 @@ export default function Contact() {
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+91 98765 43210"
+                        placeholder="+91 94434 29456"
                       />
                     </div>
                     <div className="space-y-2">
@@ -201,11 +211,23 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-2">{info.title}</h3>
-                      {info.details.map((detail) => (
-                        <p key={detail} className="text-muted-foreground">
-                          {detail}
-                        </p>
-                      ))}
+                      {info.details.map((detail) =>
+                        detail.href ? (
+                          <a
+                            key={detail.label}
+                            href={detail.href}
+                            target={detail.href.startsWith("http") ? "_blank" : undefined}
+                            rel={detail.href.startsWith("http") ? "noreferrer" : undefined}
+                            className="text-primary hover:underline text-sm"
+                          >
+                            {detail.label}
+                          </a>
+                        ) : (
+                          <p key={detail.label} className="text-muted-foreground">
+                            {detail.label}
+                          </p>
+                        )
+                      )}
                     </div>
                   </motion.div>
                 ))}
@@ -214,7 +236,7 @@ export default function Contact() {
               {/* Map */}
               <div className="mt-12 rounded-2xl overflow-hidden shadow-soft h-64 bg-muted">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.8962745048714!2d72.83096431490167!3d19.054858987100976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9410830616d%3A0x111b63353dbbce01!2sBandra%20West%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1635000000000!5m2!1sen!2sin"
+                  src="https://maps.google.com/maps?q=Narmadha%20Studio&t=&z=15&ie=UTF8&iwloc=&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

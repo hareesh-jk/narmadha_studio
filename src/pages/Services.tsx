@@ -2,111 +2,85 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { Camera, Users, Cake, TreePine, Image, Sparkles, Check, ArrowRight } from "lucide-react";
+import { Camera, Users, TreePine, Check, ArrowRight } from "lucide-react";
 
 const services = [
   {
     id: "wedding",
     icon: Camera,
     title: "Wedding Photography",
-    tagline: "Your Love Story, Beautifully Told",
-    description: "From the intimate pre-wedding moments to the grand celebration, we capture every emotion, every glance, every magical moment of your special day.",
+    tagline: "Capturing rituals, emotions, and grand celebrations",
+    description:
+      "We blend candid storytelling, traditional rituals, and cinematic portraits so every smile, tear, and dance floor moment becomes a memory you can feel forever.",
     features: [
-      "Full day coverage (up to 12 hours)",
-      "Pre-wedding photoshoot included",
-      "2 Professional photographers",
-      "500+ edited high-resolution photos",
-      "Premium photo album (40 pages)",
-      "Online gallery with download access",
-      "Same-day highlights video",
+      "Half-Day Coverage: ₹15,000 – ₹25,000",
+      "Full-Day Collection: ₹30,000 – ₹60,000",
+      "Premium Album Package from ₹75,000",
+      "Creative candid + traditional storytelling",
+      "Rich colors and cinematic edits",
+      "Custom add-ons for films & albums",
     ],
     image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
-    startingPrice: "₹75,000",
+    startingPrice: "From ₹15,000",
   },
   {
     id: "kids",
     icon: Users,
-    title: "Kids & Family",
-    tagline: "Memories That Grow With You",
-    description: "Preserve the joy and laughter of growing families with heartwarming portraits that capture the essence of your family's unique bond.",
+    title: "Baby & Kids Shoots",
+    tagline: "Soft lighting, safe setups, and joyful themes",
+    description:
+      "From newborn snuggles to toddler giggles, we create cozy studio or outdoor experiences with hygienic props, pastel palettes, and timeless storytelling for your family.",
     features: [
-      "2-3 hour session",
-      "Studio or outdoor location",
-      "Multiple outfit changes",
-      "75+ edited photos",
-      "Print-ready files",
-      "Family portrait prints included",
+      "Studio Baby Shoot (1 hour): ₹3,000 – ₹6,000",
+      "Theme / Props Session: ₹7,000 – ₹12,000",
+      "Outdoor Kids Adventure: ₹8,000 – ₹15,000",
+      "Safe props + sanitized setups",
+      "Guided posing for parents & siblings",
+      "High-resolution edits perfect for prints",
     ],
     image: "https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=800&q=80",
-    startingPrice: "₹15,000",
-  },
-  {
-    id: "events",
-    icon: Cake,
-    title: "Birthday & Events",
-    tagline: "Celebrate Every Milestone",
-    description: "From milestone birthdays to corporate events, we document celebrations that matter with creativity and attention to detail.",
-    features: [
-      "4-6 hour coverage",
-      "Candid & posed photography",
-      "Event decoration shots",
-      "200+ edited photos",
-      "Quick turnaround (7 days)",
-      "Social media-ready images",
-    ],
-    image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80",
-    startingPrice: "₹25,000",
+    startingPrice: "From ₹3,000",
   },
   {
     id: "outdoor",
     icon: TreePine,
-    title: "Outdoor Sessions",
-    tagline: "Nature's Perfect Backdrop",
-    description: "Natural light photography in beautiful locations that tell your unique story, from golden hour portraits to adventurous couple shoots.",
+    title: "Outdoor Portraits",
+    tagline: "Cinematic lighting and natural locations",
+    description:
+      "Ideal for pre-wedding stories, couple portraits, or personal branding—expect vibrant frames, dramatic skies, and handcrafted edits that mirror your personality.",
     features: [
-      "2-hour golden hour session",
-      "Location scouting included",
-      "Travel within 50km",
-      "50+ edited photos",
-      "Professional color grading",
-      "Quick delivery (5 days)",
+      "Basic Outdoor Session: ₹4,000 – ₹8,000",
+      "Couple / Pre-Wedding: ₹10,000 – ₹25,000",
+      "Cinematic Package from ₹30,000",
+      "Golden-hour lighting & location scouting",
+      "Professional retouching & album-ready edits",
+      "Travel covered within 50 km of studio",
     ],
     image: "https://images.unsplash.com/photo-1469594292607-7bd90f8d3ba4?w=800&q=80",
-    startingPrice: "₹12,000",
+    startingPrice: "From ₹4,000",
+  },
+];
+
+const whyChoosePoints = [
+  {
+    title: "High-quality professional editing",
+    description:
+      "Premium color grading, skin refinement, and album-ready exports so every frame feels polished and alive.",
   },
   {
-    id: "studio",
-    icon: Image,
-    title: "Studio Portraits",
-    tagline: "Professional & Timeless",
-    description: "Professional studio sessions for headshots, portfolios, and timeless portraits with precise lighting and artistic direction.",
-    features: [
-      "1-hour studio session",
-      "Professional lighting setup",
-      "Multiple backdrop options",
-      "25+ edited photos",
-      "Headshot retouching included",
-      "LinkedIn/Corporate ready",
-    ],
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
-    startingPrice: "₹8,000",
+    title: "Creative poses & modern lighting",
+    description:
+      "We experiment with contemporary lighting setups, cinematic framing, and guidance that keeps you relaxed.",
   },
   {
-    id: "editing",
-    icon: Sparkles,
-    title: "Photo Editing & Retouching",
-    tagline: "Transform Your Images",
-    description: "Professional photo editing and retouching services to transform your images with artistic enhancement and precision.",
-    features: [
-      "Professional color correction",
-      "Skin retouching",
-      "Background enhancement",
-      "Object removal",
-      "Before/After comparison",
-      "48-hour turnaround",
-    ],
-    image: "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=800&q=80",
-    startingPrice: "₹500/photo",
+    title: "Friendly, comfortable experience",
+    description:
+      "Our team keeps shoots relaxed and joyful—perfect for kids, couples, and camera-shy families.",
+  },
+  {
+    title: "On-time delivery & custom packages",
+    description:
+      "You’ll know exactly when galleries and albums arrive, with flexibility to tailor packages to your celebration.",
   },
 ];
 
@@ -201,6 +175,51 @@ export default function Services() {
                         <ArrowRight className="h-4 w-4" />
                       </Button>
                     </Link>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-20 bg-card">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center max-w-3xl mx-auto mb-12"
+          >
+            <span className="text-primary font-medium text-sm tracking-wider uppercase">
+              Why Choose Narmadha Studio
+            </span>
+            <h2 className="font-serif text-4xl font-semibold mt-3 mb-4">
+              Capturing Moments, Creating Memories
+            </h2>
+            <p className="text-muted-foreground">
+              Every session is designed to feel effortless, heartfelt, and uniquely yours.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {whyChoosePoints.map((point, index) => (
+              <motion.div
+                key={point.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+                className="bg-background rounded-2xl p-8 border border-border shadow-soft"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="p-2 rounded-full bg-primary/10">
+                    <Check className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-xl font-semibold mb-2">{point.title}</h3>
+                    <p className="text-muted-foreground text-sm">{point.description}</p>
                   </div>
                 </div>
               </motion.div>

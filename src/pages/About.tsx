@@ -3,10 +3,10 @@ import { Layout } from "@/components/layout/Layout";
 import { Camera, Heart, Award, Users } from "lucide-react";
 
 const stats = [
-  { icon: Camera, value: "10,000+", label: "Photos Delivered" },
-  { icon: Heart, value: "500+", label: "Happy Clients" },
-  { icon: Award, value: "50+", label: "Awards Won" },
-  { icon: Users, value: "8+", label: "Years Experience" },
+  { icon: Camera, value: "1200+", label: "Stories Captured" },
+  { icon: Heart, value: "300+", label: "Weddings Loved" },
+  { icon: Award, value: "4.9★", label: "Client Rating" },
+  { icon: Users, value: "8+", label: "Years Creating" },
 ];
 
 const teamMembers = [
@@ -49,9 +49,9 @@ export default function About() {
               <span className="text-primary"> Beautiful Moments</span>
             </h1>
             <p className="text-muted-foreground text-xl leading-relaxed">
-              At Narmadha Studio Photography, we believe every moment tells a story. 
-              Our passion is to capture those fleeting instances and transform them 
-              into timeless memories.
+              At Narmadha Studio, photography is more than a service — it is an emotion. We blend
+              soulful storytelling, rich colors, and handcrafted albums to celebrate the people and
+              occasions that matter the most.
             </p>
           </motion.div>
         </div>
@@ -92,16 +92,19 @@ export default function About() {
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Founded in 2016, Narmadha Studio Photography began with a simple dream — 
-                  to capture the essence of human connections through the lens of a camera.
+                  Founded as a humble studio in Tamil Nadu, Narmadha Studio began with one mission:
+                  capture emotions exactly as they are felt. Over the years we have grown into a
+                  tight-knit team that still treats every shoot like family.
                 </p>
                 <p>
-                  What started as a one-person operation has grown into a team of talented 
-                  photographers, each bringing their unique perspective and expertise to our work.
+                  Whether it is a grand wedding, a baby’s first smile, or an outdoor portrait, we
+                  plan each session with mood boards, lighting notes, and styling assistance so you
+                  feel confident in front of the camera.
                 </p>
                 <p>
-                  Today, we're proud to have served over 500 clients, capturing weddings, 
-                  birthdays, family portraits, and countless special moments across India.
+                  Today we are grateful to have documented hundreds of celebrations across South
+                  India. The promise remains the same: heartfelt direction, premium editing, and
+                  memories delivered on time.
                 </p>
               </div>
             </motion.div>

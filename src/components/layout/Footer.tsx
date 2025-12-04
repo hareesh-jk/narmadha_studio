@@ -4,10 +4,8 @@ import { Camera, Mail, Phone, MapPin, Instagram, Facebook, Youtube } from "lucid
 const footerLinks = {
   services: [
     { label: "Wedding Photography", href: "/services#wedding" },
-    { label: "Kids & Family", href: "/services#kids" },
-    { label: "Event Coverage", href: "/services#events" },
-    { label: "Studio Portraits", href: "/services#studio" },
-    { label: "Photo Editing", href: "/services#editing" },
+    { label: "Baby & Kids Shoots", href: "/services#kids" },
+    { label: "Outdoor Portraits", href: "/services#outdoor" },
   ],
   company: [
     { label: "About Us", href: "/about" },
@@ -115,27 +113,34 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground text-sm">
-                  123 Photography Lane,<br />
-                  Mumbai, Maharashtra 400001
-                </span>
+                <div className="text-muted-foreground text-sm">
+                  Narmadha Studio, Tamil Nadu<br />
+                  <a
+                    href="https://maps.app.goo.gl/g63Lt4pEsBL5wEbV6?g_st=ipc"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    Get directions on Google Maps
+                  </a>
+                </div>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary flex-shrink-0" />
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+919443429456"
                   className="text-muted-foreground hover:text-primary transition-colors text-sm"
                 >
-                  +91 98765 43210
+                  +91 94434 29456
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary flex-shrink-0" />
                 <a
-                  href="mailto:hello@lumiere.studio"
+                  href="mailto:narmadhastudio@gmail.com"
                   className="text-muted-foreground hover:text-primary transition-colors text-sm"
                 >
-                  hello@narmadhastudio.com
+                  narmadhastudio@gmail.com
                 </a>
               </li>
             </ul>

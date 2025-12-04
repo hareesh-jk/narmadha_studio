@@ -1,50 +1,32 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Camera, Users, Cake, TreePine, Image, Sparkles } from "lucide-react";
+import { ArrowRight, Camera, Users, TreePine } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const services = [
   {
     icon: Camera,
     title: "Wedding Photography",
-    description: "Capture every emotion, every glance, every magical moment of your special day.",
+    description:
+      "Creative storytelling for rituals, candid glances, and grand celebrations with curated albums.",
     image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80",
     href: "/services#wedding",
   },
   {
     icon: Users,
-    title: "Kids & Family",
-    description: "Preserve the joy and laughter of growing families with heartwarming portraits.",
+    title: "Baby & Kids Shoots",
+    description:
+      "Safe, playful themes with soft lighting, clean props, and joyful frames your family will cherish.",
     image: "https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=600&q=80",
     href: "/services#kids",
   },
   {
-    icon: Cake,
-    title: "Birthday & Events",
-    description: "From milestone birthdays to corporate events, we document celebrations that matter.",
-    image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=80",
-    href: "/services#events",
-  },
-  {
     icon: TreePine,
-    title: "Outdoor Sessions",
-    description: "Natural light photography in beautiful locations that tell your unique story.",
+    title: "Outdoor Portraits",
+    description:
+      "Cinematic lighting, vibrant colors, and natural backdrops for couples, families, and individuals.",
     image: "https://images.unsplash.com/photo-1469594292607-7bd90f8d3ba4?w=600&q=80",
     href: "/services#outdoor",
-  },
-  {
-    icon: Image,
-    title: "Studio Portraits",
-    description: "Professional studio sessions for headshots, portfolios, and timeless portraits.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
-    href: "/services#studio",
-  },
-  {
-    icon: Sparkles,
-    title: "Photo Editing",
-    description: "Transform your photos with professional retouching and artistic enhancement.",
-    image: "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=600&q=80",
-    href: "/services#editing",
   },
 ];
 

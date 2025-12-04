@@ -25,7 +25,7 @@ export function CTASection() {
             viewport={{ once: true }}
             className="inline-block text-gold font-medium text-sm tracking-wider uppercase mb-4"
           >
-            Ready to Create Magic?
+            Ready to Capture Your Story?
           </motion.span>
 
           <motion.h2
@@ -36,7 +36,7 @@ export function CTASection() {
             className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold text-primary-foreground mb-6"
           >
             Let's Capture Your
-            <span className="text-gold-light"> Story Together</span>
+            <span className="text-gold-light"> Memories Together</span>
           </motion.h2>
 
           <motion.p
@@ -46,8 +46,8 @@ export function CTASection() {
             transition={{ delay: 0.2 }}
             className="text-primary-foreground/80 text-lg mb-10 max-w-xl mx-auto"
           >
-            Book your session today and let us transform your precious moments 
-            into timeless memories that you'll cherish forever.
+            Capturing moments, creating memories—book your slot with Narmadha Studio and feel the
+            difference of heartfelt storytelling, rich colors, and on-time delivery.
           </motion.p>
 
           <motion.div
@@ -64,7 +64,7 @@ export function CTASection() {
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
-            <a href="tel:+919876543210">
+            <a href="tel:+919443429456">
               <Button variant="hero-outline" size="xl">
                 <Phone className="h-5 w-5" />
                 Call Us Now
